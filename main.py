@@ -11,4 +11,5 @@ def encode_62(num: int) -> str:
         result.append(BASE62[remainder])
         num //= 62
 
+
     return "".join(reversed(result))
