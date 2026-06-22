@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Lightning URL Shortener</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>⚡ Shorten Your Link</h1>
+        <p>Paste your long URL below to create a lightning-fast short link.</p>
+
+        <div class="input-group">
+            <input type="url" id="longUrl" placeholder="https://example.com/very/long/path" required>
+            <button id="shortenBtn">Shorten</button>
+        </div>
+
+        <div id="resultContainer" class="result-box hidden">
+            <p>Your short URL is ready:</p>
+            <a id="shortLink" href="#" target="_blank"></a>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
