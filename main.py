@@ -1,15 +1,21 @@
-BASE62 = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+from fastapi import FastAPI
+from pydantic import BaseModel, HttpUrl
+from starlette.datastructures import URLPath
+from sqlalchemy 
 
-def encode_62(num: int) -> str:
-    if num == 0:
-        return BASE62[0]
+import  base62
 
-    result = []
-
-    while num > 0:
-        remainder = num % 62
-        result.append(BASE62[remainder])
-        num //= 62
+app = FastAPI()
 
 
-    return "".join(reversed(result))
+class URLRequest(BaseModel):
+    long_url = HttpUrl
+
+
+@app.post("/shorten")
+async def create_short_url(payload : URLRequest):
+
+
+@app.get("/{short_code}")
+async def redirect_to_url(short_code : str):
+
